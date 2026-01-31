@@ -5,15 +5,15 @@ import dotenv from 'dotenv';
 import authRoutes from './routes/auth.js';
 import transactionRoutes from './routes/transactions.js';
 
-// Load environment variables from parent directory
-dotenv.config({ path: '../.env' });
+// Load environment variables from current directory
+dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
 
 // Middleware
 app.use(cors({
-    origin: ['http://localhost:5173', 'http://localhost:3000'],
+    origin: ['http://localhost:5173', 'http://localhost:3000', 'https://samAgent-frontend.onrender.com', 'https://samagent.onrender.com'],
     credentials: true
 }));
 app.use(express.json());
